@@ -1,7 +1,7 @@
 # Exercises XP
 
 # Exercise 1 Hello World
-print(f"Hello world\n" * 5)
+print(f"Hello world\n" * 4)
 
 # Exercise 2 Some Math
 print(f"(99^3)*8 = {(99**3)*8}")
@@ -11,6 +11,7 @@ print(f"(99^3)*8 = {(99**3)*8}")
 3 == 3 #True
 3 == "3" #False
 "Hello" == "hello" #False
+# "3" > 3 #TypeError in Python 3 (str and int cannot be compared with >)
 
 
 # Exercise 4 Your computer brand
@@ -32,8 +33,16 @@ if a > b:
     print("Hello World")
 
 
+def read_int(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Entrée invalide. Veuillez saisir un nombre entier.")
+
+
 # Exercise 7: Odd or Even
-n = int(input("saisissez un nombre : "))
+n = read_int("saisissez un nombre : ")
 if n % 2 == 0:
     print(f"Le nombre {n} est pair")
 else:
@@ -48,8 +57,8 @@ else:
     print("ahh dommage ! nous n'avons pas le même nom")
     
 # Exercise 9: Tall enough to ride a roller coaster
-t = int(input("donnez votre taille en centimetres svp : "))
+t = read_int("donnez votre taille en centimetres svp : ")
 if t > 145:
-    print("vous êtes trop grand pour conduire")
+    print("Vous êtes assez grand pour monter sur les montagnes russes !")
 else:
-    print("vous avez besoin de grandir davantage avant de conduire")
+    print("Vous devez encore grandir un peu avant de monter sur les montagnes russes.")
