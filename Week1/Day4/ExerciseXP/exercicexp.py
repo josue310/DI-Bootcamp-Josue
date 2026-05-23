@@ -100,33 +100,9 @@ print(dog1.fight(dog3))
 # Exercise 3: Dogs Domesticated
 
 import random
-
-# Step 1: Dog class (imported from previous exercise)
-class Dog:
-    def __init__(self, name, age, weight):
-        self.name = name
-        self.age = age
-        self.weight = weight
-
-    def bark(self):
-        return f'{self.name} is barking'
-
-    def run_speed(self):
-        return self.weight / self.age * 10
-
-    def fight(self, other_dog):
-        my_power = self.run_speed() * self.weight
-        other_power = other_dog.run_speed() * other_dog.weight
-
-        if my_power > other_power:
-            return f'{self.name} won the fight against {other_dog.name}!'
-        elif other_power > my_power:
-            return f'{other_dog.name} won the fight against {self.name}!'
-        else:
-            return f'{self.name} and {other_dog.name} tied!'
+from dog import Dog          
 
 
-# Step 2: Create the PetDog class
 class PetDog(Dog):
     def __init__(self, name, age, weight):
         super().__init__(name, age, weight)
@@ -149,10 +125,10 @@ class PetDog(Dog):
             print(f"{self.name} is not trained yet!")
 
 
-# Step 3: Test PetDog methods
-fido = PetDog("Fido", 2, 10)
+# Tests
+fido  = PetDog("Fido",  2, 10)
 buddy = PetDog("Buddy", 3, 15)
-max_ = PetDog("Max", 4, 20)
+max_  = PetDog("Max",   4, 20)
 
 print("--- Train ---")
 fido.train()
@@ -169,7 +145,6 @@ buddy.do_a_trick()
 print("\n--- Inherited methods still work ---")
 print(fido.run_speed())
 print(fido.fight(buddy))
-
 
 # 🌟 Exercise 4: Family and Person Classes
 
